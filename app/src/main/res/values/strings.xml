@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PayWise</string>
+    <string name="sub_title">Smart with Money, Easy in Life.</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="login_title">Login Account</string>
+    <string name="sub_title_login">Sign in to manage your money wisely.</string>
+    <string name="email_login">Email or Username</string>
+    <string name="password_login">Password</string>
+    <string name="forgot_pw_login">Forgot Password?</string>
+    <string name="havent_acc_login">I dont\'t have an account
+        <font color="#61D917">Register</font>
+    </string>
+    <string name="register_title">Create Your Account</string>
+    <string name="register_subtitle">Welcome! Let’s create your PayWise account.</string>
+    <string name="register_input_email">Enter Email Address</string>
+    <string name="register_password">Enter Password</string>
+    <string name="register_username">Enter Username</string>
+    <string name="register_confirm_password">Confirm Password</string>
+    <string name="register_full_name">Full Name</string>
+    <string name="have_acc_login">I already have an account
+        <font color="#61D917">Login</font>
+    </string>
+    <string name="dashboard_logout">LOGOUT</string>
+</resources>
