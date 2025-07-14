@@ -3,11 +3,10 @@ package com.utb.paywise
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.utb.paywise.databinding.ActivityLoginBinding
 import io.reactivex.Observable
@@ -15,12 +14,16 @@ import io.reactivex.Observable
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var auth: FirebaseAuth
 
     @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        Authentication
+        auth = FirebaseAuth.getInstance()
 
 //      Username Validation
         val usernameStream = RxTextView.textChanges(binding.editextUsernameLogin)
@@ -64,11 +67,17 @@ class LoginActivity : AppCompatActivity() {
 
 //        Onlick
         binding.btnLogin.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            val email = binding.editextUsernameLogin.text.toString().trim()
+            val password = binding.edittextPasswordLogin.text.toString().trim()
+            loginUser(email, password)
         }
 
         binding.haventAccLogin.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        binding.forgotPwLogin.setOnClickListener {
+            startActivity(Intent(this, ResetPasswordActivity::class.java))
         }
     }
 
@@ -83,5 +92,20 @@ class LoginActivity : AppCompatActivity() {
                 if (isNotValid)
                     "$text tidak boleh kosong"
                 else null
+    }
+
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { login ->
+                if (login.isSuccessful) {
+                    Intent(this, MainActivity::class.java).also {
+                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(it)
+                        Toast.makeText(this, "Login berhasil!", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, login.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }

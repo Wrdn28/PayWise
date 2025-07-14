@@ -4,25 +4,27 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.utb.paywise.databinding.ActivityRegisterBinding
 import io.reactivex.Observable
-import org.intellij.lang.annotations.Pattern
 
 @SuppressLint("CheckResult")
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        Authtentication
+        auth = FirebaseAuth.getInstance()
 
 //        Name Validation
         val nameStream = RxTextView.textChanges(binding.edittextNameRegister)
@@ -103,13 +105,14 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 binding.btnRegister.isEnabled = false
                 binding.btnRegister.backgroundTintList = ContextCompat.getColorStateList(this, android.R.color.darker_gray)
-
             }
         }
 
 //        Onclick
         binding.btnRegister.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            val email = binding.edittextEmailRegister.text.toString().trim()
+            val password = binding.edittextPasswordRegister.text.toString().trim()
+            registerUser(email, password)
         }
 
         binding.haveAccRegister.setOnClickListener {
@@ -149,6 +152,18 @@ class RegisterActivity : AppCompatActivity() {
             if (isNotValid)
                 "Password tidak sama"
             else null
+    }
+
+    private fun registerUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    Toast.makeText(this, "Register berhasil!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
 }

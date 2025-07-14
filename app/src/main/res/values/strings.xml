@@ -5,7 +5,7 @@
     <string name="btn_login">LOGIN</string>
     <string name="login_title">Login Account</string>
     <string name="sub_title_login">Sign in to manage your money wisely.</string>
-    <string name="email_login">Email or Username</string>
+    <string name="email_login">Email</string>
     <string name="password_login">Password</string>
     <string name="forgot_pw_login">Forgot Password?</string>
     <string name="havent_acc_login">I dont\'t have an account
@@ -22,4 +22,11 @@
         <font color="#61D917">Login</font>
     </string>
     <string name="dashboard_logout">LOGOUT</string>
+    <string name="reset_password_account">Reset your password</string>
+    <string name="reset_password_sub_title">Reset your Paywise account password below.</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="back_to_login">Back to
+        <font color="#61D917">Login</font>
+    </string>
+    <string name="reset_password_email">Email address</string>
 </resources>
