@@ -43,6 +43,7 @@
         app:startIconDrawable="@drawable/ic_account">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_name_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -63,6 +64,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_email_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -83,6 +85,7 @@
         app:startIconDrawable="@drawable/ic_circle_account">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_username_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -103,6 +106,7 @@
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_password_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -122,6 +126,7 @@
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_confirmpassword_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -134,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="@string/btn_register"
-        style="@style/btn_green"
+        style="@style/btn_gray"
         app:layout_constraintBottom_toTopOf="@+id/have_acc_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

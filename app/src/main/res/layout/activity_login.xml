@@ -43,6 +43,7 @@
         app:startIconDrawable="@drawable/ic_circle_account">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editext_username_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -63,6 +64,7 @@
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_password_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextInputEditText"
@@ -89,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="@string/btn_login"
-        style="@style/btn_green"
+        style="@style/btn_gray"
         app:layout_constraintBottom_toTopOf="@+id/havent_acc_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
