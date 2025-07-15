@@ -29,4 +29,12 @@
         <font color="#61D917">Login</font>
     </string>
     <string name="reset_password_email">Email address</string>
+    <string name="dashboard_total_income">Total Income</string>
+    <string name="dashboard_total_expense">Total Expense</string>
+    <string name="trans_amount">Amount</string>
+    <string name="trans_date">Transaction date</string>
+    <string name="save_transaction">Save Transaction</string>
+    <string name="item_content_edit">Edit</string>
+    <string name="item_content_delete">Delete</string>
+    <string name="trans_sub_title">Manage your income and expenses with ease.</string>
 </resources>
