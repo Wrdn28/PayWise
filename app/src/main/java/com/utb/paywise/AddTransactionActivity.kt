@@ -36,7 +36,8 @@ class AddTransactionActivity : AppCompatActivity() {
         val amountText = binding.edittextTransAmount.text.toString().trim()
         val isIncome = binding.rbIncome.isChecked
         val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
-        if (title.isEmpty() || amountText.isEmpty()) {
+
+        if (title.isEmpty() || amountText.isEmpty() || selectedDate == null) {
             Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             return
         }
@@ -53,7 +54,7 @@ class AddTransactionActivity : AppCompatActivity() {
             "amount" to amount,
             "isIncome" to isIncome,
             "timestamp" to FieldValue.serverTimestamp(),
-            "date" to selectedDate,
+            "date" to selectedDate
         )
 
         db.collection("transactions").add(transaction)

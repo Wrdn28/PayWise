@@ -31,13 +31,23 @@
             android:textSize="14sp"
             android:textColor="@color/primary" />
 
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAmount"
+            android:layout_marginTop="4dp"
+            android:text="hh mm yyyy"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray" />
+
         <ImageButton
             android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_edit"
             android:contentDescription="@string/item_content_edit"
@@ -49,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/btnEdit"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_delete"
             android:contentDescription="@string/item_content_delete"

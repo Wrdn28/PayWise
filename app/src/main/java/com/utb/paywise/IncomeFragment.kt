@@ -44,7 +44,8 @@ class IncomeFragment : Fragment() {
                     val title = it.getString("title") ?: ""
                     val amount = it.getLong("amount")?.toInt() ?: 0
                     val isIncome = it.getBoolean("isIncome") ?: true
-                    transactions.add(Transaction(id, title, amount, isIncome))
+                    val date = it.getDate("date")
+                    transactions.add(Transaction(id, title, amount, isIncome, date))
                 }
                 adapter.notifyDataSetChanged()
             }

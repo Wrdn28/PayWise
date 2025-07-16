@@ -11,6 +11,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.utb.paywise.databinding.DialogEditTransactionBinding
 import com.utb.paywise.databinding.ItemTransactionBinding
 import com.utb.paywise.util.formatRupiah
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+
 
 class TransactionAdapter(private val list: List<Transaction>) :
     RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>() {
@@ -45,6 +49,10 @@ class TransactionAdapter(private val list: List<Transaction>) :
         holder.binding.btnDelete.setOnClickListener {
             deleteTransaction(transaction.id, holder.itemView.context)
         }
+
+        val formatter = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+        val formattedDate = transaction.date?.let { formatter.format(it) } ?: "-"
+        holder.binding.tvDate.text = formattedDate
     }
 
     private fun showOptionsDialog(transaction: Transaction, context: Context) {
