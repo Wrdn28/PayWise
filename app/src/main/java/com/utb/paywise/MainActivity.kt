@@ -33,7 +33,17 @@ class MainActivity : AppCompatActivity() {
         val adapter = DashboardPagerAdapter(this)
         binding.viewPager.adapter = adapter
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = if (position == 0) "Income" else "Expense"
+            when (position) {
+                0 -> {
+                    tab.text = "Income"
+                    tab.setIcon(R.drawable.ic_income)
+                }
+                1 -> {
+                    tab.text = "Extends"
+                    tab.setIcon(R.drawable.ic_extends)
+                }
+            }
+
         }.attach()
 
         binding.fabAdd.setOnClickListener {

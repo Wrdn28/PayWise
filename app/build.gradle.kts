@@ -57,4 +57,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:23.2.1")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    implementation("com.airbnb.android:lottie:6.3.0")
+    
+
 }

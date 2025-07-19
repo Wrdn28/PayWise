@@ -115,7 +115,7 @@ class RegisterActivity : AppCompatActivity() {
             registerUser(email, password)
         }
 
-        binding.haveAccRegister.setOnClickListener {
+        binding.haveAccRegiter.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }
