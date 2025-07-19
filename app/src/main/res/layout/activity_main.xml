@@ -1,55 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+
+    <!-- Konten Scrollable (Chart + ViewPager) -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:background="@color/white"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white" />
+            android:background="@color/white"
+            android:elevation="0dp"
+            app:title="PayWise"
+            app:titleTextColor="@color/black"
+            android:layout_marginTop="20dp"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="16dp" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
+        <!-- CardView untuk Chart -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/primary"
-            app:tabSelectedTextColor="@color/primary"
-            app:tabTextColor="@android:color/darker_gray"
-            android:background="@color/white"/>
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_marginBottom="8dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="@color/white">
 
-    <!-- ViewPager -->
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    tools:ignore="MissingClass" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ViewPager -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- TabLayout di bawah -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:tabIndicatorColor="@color/primary"
+        app:tabSelectedTextColor="@color/primary"
+        app:tabTextColor="@android:color/darker_gray"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:paddingBottom="10dp"/>
 
+    <!-- FAB mengambang di atas TabLayout -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:layout_gravity="bottom|end"
+        android:layout_marginBottom="88dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/ic_add"
-        app:tint="@android:color/white"
-        app:backgroundTint="@color/primary"/>
+        app:backgroundTint="@color/primary"
+        app:tint="@android:color/white" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
