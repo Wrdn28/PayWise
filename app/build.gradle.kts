@@ -58,6 +58,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
-    // Material Design
-    implementation ("com.google.android.material:material:1.3.0-alpha03")
+    implementation("com.airbnb.android:lottie:6.3.0")
+    
+
 }
