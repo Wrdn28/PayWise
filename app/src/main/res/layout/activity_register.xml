@@ -63,7 +63,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/register_full_name"
-                app:startIconDrawable="@drawable/ic_account">
+                app:startIconDrawable="@drawable/ic_account"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_name_register"
@@ -79,7 +81,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/register_input_email"
                 app:startIconDrawable="@drawable/ic_email"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_email_register"
@@ -95,7 +99,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/register_username"
                 app:startIconDrawable="@drawable/ic_circle_account"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_username_register"
@@ -111,7 +117,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/register_password"
                 app:startIconDrawable="@drawable/ic_lock"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_password_register"
@@ -127,7 +135,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/register_confirm_password"
                 app:startIconDrawable="@drawable/ic_lock"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_confirmpassword_register"

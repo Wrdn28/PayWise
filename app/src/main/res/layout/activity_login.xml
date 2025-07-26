@@ -53,7 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="24dp"
+            android:background="@color/white">
 
             <!-- Email Input -->
             <com.google.android.material.textfield.TextInputLayout
@@ -65,6 +66,8 @@
                 app:boxCornerRadiusTopEnd="12dp"
                 android:layout_marginBottom="16dp"
                 android:layout_width="match_parent"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -83,7 +86,9 @@
                 app:boxCornerRadiusBottomStart="12dp"
                 app:boxCornerRadiusBottomEnd="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey"
+                app:startIconTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_password_login"
