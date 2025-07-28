@@ -71,6 +71,7 @@
                     android:id="@+id/edittext_name_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="textPersonName"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,6 +90,7 @@
                     android:id="@+id/edittext_email_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="textEmailAddress"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,6 +109,7 @@
                     android:id="@+id/edittext_username_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,6 +128,7 @@
                     android:id="@+id/edittext_password_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,6 +147,7 @@
                     android:id="@+id/edittext_confirmpassword_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

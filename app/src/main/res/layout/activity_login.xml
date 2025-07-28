@@ -74,6 +74,7 @@
                     android:id="@+id/editext_username_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="textEmailAddress"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,6 +95,7 @@
                     android:id="@+id/edittext_password_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
