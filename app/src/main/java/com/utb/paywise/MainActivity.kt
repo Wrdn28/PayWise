@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
                     tab.setIcon(R.drawable.ic_income)
                 }
                 1 -> {
-                    tab.text = "Extends"
-                    tab.setIcon(R.drawable.ic_extends)
+                    tab.text = "Expense"
+                    tab.setIcon(R.drawable.ic_expense)
                 }
             }
 
